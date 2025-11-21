@@ -1,54 +1,29 @@
-import { Carousel } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
 
-export const GaleriaCarrusel = () => {
-  const andaluciaImages = [
+// Array con las imágenes que deberá de representar el carrusel.
+const Galeria = () => {
+  const lidl = [
     {
       id: 1,
-      src: '/granada.jpg',
-      alt: 'Alhambra, Granada',
-      captionTitle: 'Granada',
-      captionText: 'La majestuosa Alhambra bajo el sol.',
+      src: '/imagen_galeria2.webp',
     },
     {
       id: 2,
-      src: '/sevilla.jpg',
-      alt: 'Plaza de España, Sevilla',
-      captionTitle: 'Sevilla',
-      captionText: 'La icónica Plaza de España.',
-    },
-    {
-      id: 3,
-      src: '/cordoba.jpg',
-      alt: 'Mezquita de Córdoba',
-      captionTitle: 'Córdoba',
-      captionText: 'El histórico bosque de columnas de la Mezquita.',
-    },
-    {
-      id: 4,
-      src: '/cadiz.jpg',
-      alt: 'Playa de La Caleta, Cádiz',
-      captionTitle: 'Cádiz',
-      captionText: 'Atardecer en la playa de La Caleta.',
-    },
-    {
-      id: 5,
-      src: '/almeria.jpg',
-      alt: 'Desierto de Tabernas, Almería',
-      captionTitle: 'Almería',
-      captionText: 'Paisaje único del Desierto de Tabernas.',
-    },
-    {
-      id: 6,
-      src: '/malaga.jpg',
-      alt: 'Vistas de Málaga',
-      captionTitle: 'Málaga',
-      captionText: 'Vistas desde el Castillo de Gibralfaro.',
-    },
-    {
-      id: 7,
-      src: '/huelva.jpg',
-      alt: 'Parque de Doñana, Huelva',
-      captionTitle: 'Huelva',
-      captionText: 'Marismas en el Parque Nacional de Doñana.',
-    },
+      src: '/imagen_galeria1.webp',
+
+    }
   ];
+
+  // Función map que lo que hace es ir leyendo el array que le hemos pasado y va pintando lo que le indicamos, en este caso únicamente la imágen.
+  return (
+    <Carousel>
+      {lidl.map((item) => (
+        <Carousel.Item key={item.id}>
+          <img className="d-block w-100" src={item.src}  />     
+        </Carousel.Item>
+      ))}
+    </Carousel>
+  );
+};
+
+export default Galeria;
