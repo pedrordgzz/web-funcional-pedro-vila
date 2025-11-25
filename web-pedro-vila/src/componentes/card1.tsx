@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 
-function card1() {
+function Card1() {
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="/nieve.webp" />
@@ -11,4 +11,4 @@ function card1() {
     );
 }
 
-export default card1;
+export default Card1;

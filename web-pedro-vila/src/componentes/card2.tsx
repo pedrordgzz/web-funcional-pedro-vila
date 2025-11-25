@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card';
 
-function card2() {
+function Card2() {
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="/Decoración navideña.webp" />
@@ -11,4 +11,4 @@ function card2() {
     );
 }
 
-export default card2;
+export default Card2;
