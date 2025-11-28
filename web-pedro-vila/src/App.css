@@ -1,10 +1,12 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;       /* Ocupar todo el ancho */
+  max-width: 100%;   /* Eliminar el límite de 1280px */
+  margin: 0;         /* Sin márgenes automáticos */
+  padding: 0;        /* Sin relleno interno */
+  text-align: left;  /* Alinear texto a la izquierda por defecto (opcional) */
 }
 
+/* El resto de estilos (.logo, .card, etc.) los puedes dejar igual si quieres */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -19,12 +21,8 @@
 }
 
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {
