@@ -1,0 +1,121 @@
+/* --- Reset básico --- */
+.lidl-layout {
+  font-family: 'Segoe UI', sans-serif;
+  width: 100%;
+}
+
+/* --- 1. Franja Amarilla --- */
+.top-yellow-bar {
+  background-color: #FFF100;
+  color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 10px;
+}
+
+.truck-icon {
+  font-size: 1.3rem;
+}
+
+/* --- 2. Franja Negra --- */
+.black-banner {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+/* --- 3. Contenedor de Categorías --- */
+.categories-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px 20px;
+  background-color: #F8F8F8; /* Gris muy clarito de fondo */
+  flex-wrap: wrap;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Estilos de las Formas (Círculos y Rombo) */
+.icon-shape {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.8rem; /* Tamaño de los iconos dentro */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.icon-shape:hover {
+  transform: scale(1.05);
+}
+
+/* Círculo estándar */
+.icon-shape.circle {
+  border-radius: 50%;
+}
+
+/* Rombo (Ofertas) */
+.icon-shape.diamond {
+  border-radius: 12px;
+  transform: rotate(45deg); /* Giramos el cuadrado */
+  margin-bottom: 12px; /* Espacio extra abajo por la rotación */
+  margin-top: 10px;
+}
+
+.icon-shape.diamond:hover {
+  transform: rotate(45deg) scale(1.05);
+}
+
+/* Contenido dentro del icono */
+.icon-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMPORTANTE: Contrarrestar la rotación solo para el contenido del rombo */
+.icon-shape.diamond .icon-content {
+  transform: rotate(-45deg);
+}
+
+/* Texto específico de "OFERTAS" */
+.offer-text {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #FFF100; /* Texto amarillo */
+  text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
+  -webkit-text-stroke: 0.5px #E2001A; /* Borde sutil para legibilidad (opcional) */
+}
+
+/* Etiquetas de texto debajo */
+.category-label {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  line-height: 1.2;
+  color: #333;
+}
+
+.category-item:hover .category-label {
+  text-decoration: underline;
+}
+
