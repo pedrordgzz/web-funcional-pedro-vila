@@ -1,0 +1,125 @@
+/* Wrapper principal */
+.lidl-footer-wrapper {
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* --- ZONA PRINCIPAL (Gris oscuro) --- */
+.footer-main-content {
+    background-color: #565e64;
+    color: white;
+    font-size: 0.85rem;
+}
+
+/* Títulos */
+.footer-heading {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Listas */
+.footer-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.footer-list li {
+    margin-bottom: 6px;
+}
+
+.footer-list a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-list a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- LOGOS (Cajas blancas) --- */
+.logos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.logo-box {
+    background-color: white;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 45px;
+    height: 30px;
+}
+
+.logo-box.round {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}
+
+.logo-box.rect {
+    width: auto;
+    padding: 5px 10px;
+}
+
+/* --- BARRA INFERIOR --- */
+.footer-bottom-bar {
+    background-color: #565e64;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: #ccc;
+    font-size: 0.75rem;
+}
+
+.legal-links a {
+    color: #ccc;
+    text-decoration: none;
+}
+.legal-links a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+.separator {
+    color: #888;
+}
+
+/* Redes Sociales */
+.social-icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: #fff100;
+}
+
+/* Botón subir */
+.scroll-btn {
+    background-color: white;
+    color: #565e64;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+}

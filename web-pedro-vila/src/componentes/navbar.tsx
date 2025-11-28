@@ -8,7 +8,6 @@ import './navbar.css';
 // Iconos importados de react-icons
 import { IoMenu, IoNewspaperOutline, IoStorefrontOutline, IoPersonOutline, IoHeartOutline, IoCartOutline } from "react-icons/io5";
 import type { IconType } from 'react-icons';
-
 // Interfaces definidas para los tipos de los props
 interface BotonIconoProps {
   texto: string;
