@@ -19,13 +19,13 @@ export default function App() {
       {/* Contenido según la ruta */}
       <Routes>
         <Route path="/" element={<Body />} />
-
         <Route path="/compra-online" element={<PaginaSimple texto="Página: Compra Online" />} />
         <Route path="/en-tu-tienda" element={<PaginaSimple texto="Página: En tu tienda" />} />
         <Route path="/lidl-plus" element={<PaginaSimple texto="Página: Lidl Plus" />} />
         <Route path="/recetas" element={<PaginaSimple texto="Página: Recetas" />} />
         <Route path="/mundos" element={<PaginaSimple texto="Página: Mundos para ti" />} />
         <Route path="/inspirate" element={<PaginaSimple texto="Página: Inspírate" />} />
+        <Route path="/*" element={<PaginaSimple texto="ERROR 404: DIRECCIÓN INCORRECTA" />} />
       </Routes>
 
       {/* Footer siempre visible */}
