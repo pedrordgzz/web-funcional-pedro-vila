@@ -18,7 +18,7 @@
     margin-bottom: 15px;
     font-size: 0.9rem;
     color: #fff;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 5px;
     display: inline-block;
 }
@@ -64,6 +64,8 @@
     justify-content: center;
     min-width: 45px;
     height: 30px;
+    overflow: hidden;
+    /* evita deformaciones */
 }
 
 .logo-box.round {
@@ -77,10 +79,19 @@
     padding: 5px 10px;
 }
 
+.logo-box img {
+    max-height: 100%;
+    /* para que encaje en la altura definida */
+    width: auto;
+    object-fit: contain;
+    /* mantiene proporción */
+    display: block;
+}
+
 /* --- BARRA INFERIOR --- */
 .footer-bottom-bar {
     background-color: #565e64;
-    border-top: 1px solid rgba(255,255,255,0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: #ccc;
     font-size: 0.75rem;
 }
@@ -89,6 +100,7 @@
     color: #ccc;
     text-decoration: none;
 }
+
 .legal-links a:hover {
     text-decoration: underline;
     color: white;
