@@ -1,5 +1,4 @@
 .footer {
-  background-color: #f0f2f5; /* Un gris claro similar al de Lidl */
   color: #333;
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -147,5 +146,11 @@
 
   .legal-links a {
     margin: 0 8px;
+  }
+}
+@media (max-width: 768px) {
+  /* Esto ocultará el carrusel en móviles y tablets verticales */
+  .galeria-principal {
+    display: none !important;
   }
 }

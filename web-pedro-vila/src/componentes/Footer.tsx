@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                             <div className="logos-grid">
                                 <img src="/seur.webp" alt="SEUR" className="logo-box" />
                                 <img src="/gls.webp" alt="GLS" className="logo-box" />
-                                <span className="logo-box">XPO</span>
+                                <img src="/zpo.webp" alt="GLS" className="logo-box" />
                             </div>
 
                             <h6 className="footer-heading mt-4">NUESTROS PRODUCTOS</h6>
@@ -91,8 +91,7 @@ const Footer: React.FC = () => {
 
                             <h6 className="footer-heading mt-4">GARANTÍA Y SEGURIDAD</h6>
                             <div className="logos-grid">
-                                <span className="logo-box round">Verified</span>
-                                <span className="logo-box round">Confianza</span>
+                                <img src="/confianza online.webp" alt="GLS" className="logo-box" />
                             </div>
                         </Col>
 
@@ -100,15 +99,15 @@ const Footer: React.FC = () => {
                         <Col md={3} className="mb-4">
                             <h6 className="footer-heading">PREMIOS</h6>
                             <div className="logos-grid">
-                                <span className="logo-box rect">Top Employer</span>
-                                <span className="logo-box rect">Servicio Cliente</span>
+                                <img src="/logo.webp"  className="logo-bopx" />
+                                <img src="/atencion.webp"  className="logo-bopx" />
                             </div>
                         </Col>
                     </Row>
                 </Container>
             </div>
 
-            {/* 3. Legal + Redes sociales */}
+{/* 3. Legal + Redes sociales */}
             <div className="footer-bottom-bar py-3">
                 <Container>
                     <Row className="align-items-center">
