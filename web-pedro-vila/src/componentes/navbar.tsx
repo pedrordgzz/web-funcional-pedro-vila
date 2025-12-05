@@ -7,7 +7,7 @@ import './navbar.css';
 
 import { NavLink } from "react-router-dom";
 
-// ICONOS (react-icons)
+// Importamos los iconos necesarios desde la librería react-icons
 import { 
   IoMenu, 
   IoNewspaperOutline, 
@@ -19,7 +19,7 @@ import {
 
 import type { IconType } from 'react-icons';
 
-// Props
+// Definimos las interfaces para tipar nuestros props
 interface BotonIconoProps {
   texto: string;
   Icono: IconType;
@@ -38,11 +38,12 @@ const Navbar: React.FC = () => {
   return (
     <div className="lidl-header-wrapper">
 
-      {/* ─── UTILITIES BAR (Superior) ─────────────────────── */}
+      {/* Linea superior del header con texto */}
       <div className="lidl-utility-bar">
         <Container className="lidl-utility-container">
           <span className="lidl-slogan">Vale la pena.</span>
           <div className="lidl-utility-links">
+            {/* Iteramos sobre una lista simple de textos para generar los enlaces superiores */}
             {['Newsletter', 'Empresa', 'Sostenibilidad', 'Sala de prensa', 'Empleo', 'Inmuebles', 'Ayuda'].map(link => (
               <span key={link} className="lidl-utility-link">{link}</span>
             ))}
@@ -50,11 +51,10 @@ const Navbar: React.FC = () => {
         </Container>
       </div>
 
-      {/* ─── ZONA PRINCIPAL (Logo, Menu, Buscador, Iconos) ─── */}
+      {/* Componente principal del header */}
       <Container className="lidl-main-container">
         <div className="lidl-main-row">
-
-          {/* LOGO */}
+          {/* Lodo de lidl */}
           <div className="lidl-logo">
             <img 
               src="/logo.svg" 
@@ -65,13 +65,13 @@ const Navbar: React.FC = () => {
             />
           </div>
 
-          {/* BOTÓN MENÚ */}
+          {/* Botón de menuº */}
           <div className="lidl-menu-btn">
             <IoMenu size={30} /> 
             <span>Menú</span>
           </div>
 
-          {/* BUSCADOR */}
+          {/* Componente del buscador*/}
           <Form className="lidl-search-form">
             <Form.Control
               type="search"
@@ -83,14 +83,13 @@ const Navbar: React.FC = () => {
             </Button>
           </Form>
 
-          {/* ICONOS DERECHA */}
+          {/* Componente para pintar los iconos de la derecha */}
           <div className="lidl-icons-container">
+            {/* Usamos nuestro componente reutilizable para los botones con icono */}
             <BotonIcono texto="Folleto" Icono={IoNewspaperOutline} />
-
             <div className="lidl-icon-wrapper">
               <BotonIcono texto="Mi tienda" Icono={IoStorefrontOutline} />
             </div>
-
             <BotonIcono texto="Identifícate" Icono={IoPersonOutline} />
             <BotonIcono texto="Lista de deseos" Icono={IoHeartOutline} />
             <BotonIcono texto="Cesta" Icono={IoCartOutline} />
@@ -99,18 +98,17 @@ const Navbar: React.FC = () => {
         </div>
       </Container>
 
-      {/* ─── NAVBAR INFERIOR (CON RUTAS REALES) ───────────── */}
+      {/* Menú inferior, debajjo del botón de buscar */}
       <div className="lidl-bottom-nav">
         <Container>
           <Nav className="lidl-nav-scroll">
-
+            {/* Usamos componentes LinkInferior para la navegación interna usando react-router-dom */}
             <LinkInferior texto="Compra Online"  to="/compra-online" />
             <LinkInferior texto="En tu tienda"   to="/en-tu-tienda" />
             <LinkInferior texto="Lidl Plus"      to="/lidl-plus" />
             <LinkInferior texto="Recetas"        to="/recetas" />
             <LinkInferior texto="Mundos para ti" to="/mundos" />
             <LinkInferior texto="Inspírate"      to="/inspirate" />
-
           </Nav>
         </Container>
       </div>
@@ -119,12 +117,7 @@ const Navbar: React.FC = () => {
   );
 };
 
-
-/* =====================================================
-   COMPONENTES AUXILIARES
-===================================================== */
-
-// Ícono superior
+// Componente para renderizar los botones de iconos superiores de forma limpia
 const BotonIcono: React.FC<BotonIconoProps> = ({ texto, Icono }) => {
   return (
     <div className="lidl-icon-btn">
@@ -136,9 +129,10 @@ const BotonIcono: React.FC<BotonIconoProps> = ({ texto, Icono }) => {
   );
 };
 
-// ENLACES INFERIORES CON NavLink
+// Componente para los enlaces inferiores usando NavLink de react-router-dom
 const LinkInferior: React.FC<LinkInferiorProps> = ({ texto, to }) => {
   return (
+    // Usamos NavLink para detectar automáticamente si el enlace está activo y aplicar la clase "active"
     <NavLink
       to={to}
       className={({ isActive }) =>

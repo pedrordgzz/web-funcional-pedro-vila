@@ -1,18 +1,16 @@
+/* Aseguramos que toda la pagina tenga estos estilos, para no tener que especificarlos uno a uno*/
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,17 +20,15 @@ a:hover {
   color: #535bf2;
 }
 
-/* --- AQUÍ ESTÁ EL CAMBIO IMPORTANTE --- */
+/* Estilos generales del body */
 body {
   margin: 0;
-  /* display: flex;  <-- BORRAR ESTO */
-  /* place-items: center; <-- BORRAR ESTO */
-  display: block; /* Aseguramos comportamiento de bloque normal */
+  display: block; 
   min-width: 320px;
   min-height: 100vh;
 }
 
-/* ... Resto de tu CSS (h1, button, ventajas, etc) ... */
+/* Aseguramos que todo lo que incluyamos aquí, si no hemos incluido estilos específicos cojan estos */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
@@ -52,12 +48,9 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
 
-/* --- ESTILOS VENTAJAS LIDL --- */
+
+/* --- Estilos para la sección ventajas --- */
 .ventajas-section {
     background-color: #fff;
 }

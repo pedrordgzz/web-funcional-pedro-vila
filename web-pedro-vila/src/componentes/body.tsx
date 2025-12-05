@@ -9,6 +9,7 @@ import { IoChevronDownOutline } from "react-icons/io5"; // Icono para el botón
 
 const Body: React.FC = () => {
     
+    // Creamos una lista de datos estáticos para generar las tarjetas dinámicamente
     const cardsData = [
         { id: 1, titulo: "Prepárate para la nieve", src: "/nieve.webp" },
         { id: 2, titulo: "Decoración navideña", src: "/Decoración navideña.webp" },
@@ -21,8 +22,9 @@ const Body: React.FC = () => {
             <Container className="my-5">
                 <h3 className="mb-4">Destacados de la semana</h3>
                 
-                {/* GRID DE CARDS */}
+                {/* Usamos el Grid de Bootstrap para organizar las tarjetas */}
                 <Row>
+                    {/* Iteramos sobre los datos para pintar cada tarjeta */}
                     {cardsData.map((item) => (
                         <Col key={item.id} xs={12} sm={6} md={3} className="mb-4">
                             <CardBase titulo={item.titulo} imgSrc={item.src} />
@@ -30,7 +32,7 @@ const Body: React.FC = () => {
                     ))}
                 </Row>
 
-                {/* BOTÓN "VER TODAS LAS OFERTAS" */}
+                {/* Pintamos el botón de ver ofertas con estilos personalizados */}
                 <div className="text-center mt-4">
                     <Button 
                         variant="primary" 
@@ -51,8 +53,10 @@ const Body: React.FC = () => {
                 </div>
             </Container>
 
-            {/* SECCIÓN VENTAJAS (Separada visualmente) */}
+            {/* Separamos visualmente la sección de ventajas */}
             <hr style={{ margin: '3rem 0', borderColor: '#eee' }} />
+            
+            {/* Renderizamos el componente de ventajas */}
             <Ventajas />
         </>
     );

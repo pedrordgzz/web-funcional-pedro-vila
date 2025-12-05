@@ -1,11 +1,13 @@
 import React from 'react';
 import './header.css';
 import { FaTruck } from "react-icons/fa";
+// Importamos los componentes reales que hemos creado en los otros ficheros
 import Navbar from './navbar';
 import Galeria from './galeria';
-import { IoRestaurant,  IoHammer, IoBarbell, IoBed, IoShirt, IoRocket} from "react-icons/io5";
+// Importamos los iconos para las categorías
+import { IoRestaurant, IoHammer, IoBarbell, IoBed, IoShirt, IoRocket } from "react-icons/io5";
 
-
+// Definimos la estructura de datos para las categorías (Círculos y Rombos)
 interface CategoryItem {
   id: number;
   label: string;
@@ -14,6 +16,7 @@ interface CategoryItem {
   type: 'circle' | 'diamond';
 }
 
+// array que leera la funcion map que hemos creado
 const categories: CategoryItem[] = [
   { 
     id: 1, 
@@ -32,7 +35,7 @@ const categories: CategoryItem[] = [
   { 
     id: 3, 
     label: 'Bricolaje y jardín', 
-    icon: <IoHammer />, // Martillo representa bien el trabajo manual
+    icon: <IoHammer />, 
     color: '#2D5D2B', 
     type: 'circle' 
   },
@@ -46,7 +49,7 @@ const categories: CategoryItem[] = [
   { 
     id: 5, 
     label: 'Hogar y decoración', 
-    icon: <IoBed />, // Cama representa muebles/hogar
+    icon: <IoBed />, 
     color: '#D4C5B0', 
     type: 'circle' 
   },
@@ -60,38 +63,35 @@ const categories: CategoryItem[] = [
   { 
     id: 7, 
     label: 'Moda infantil y juguetes', 
-    icon: <IoRocket />, // El cohete es muy usado para sección "Kids"
+    icon: <IoRocket />, 
     color: 'gradient', 
     type: 'circle' 
   },
 ];
 
-// Componentes Mock
-const NavbarMock = () => <div className="mock-area"><Navbar/></div>;
-const GalleryMock = () => <div className="mock-area gallery"><Galeria/></div>;
-
 export const LidlHeader: React.FC = () => {
   return (
     <div className="lidl-layout">
       
-      {/* 1. Franja Amarilla */}
+      {/* Mostramos la franja Amarilla de envíos en la parte superior */}
       <div className="top-yellow-bar">
         <FaTruck className="truck-icon" />
         <span>Envío gratis a partir de 79 €</span>
       </div>
 
-      {/* 2. Navbar */}
-      <NavbarMock />
+      {/* Insertamos el componente Navbar*/}
+      <Navbar />
 
-      {/* 3. Franja Negra */}
+      {/* Mostramos el banner negro de promoción */}
       <div className="black-banner">
         <span>¡Black Week! | Hasta -75%</span>
       </div>
 
-      {/* 4. Categorías */}
+      {/* Renderizamos la lista de categorías dinámicamente leyendo el array creado */}
       <div className="categories-container">
         {categories.map((cat) => (
           <div key={cat.id} className="category-item">
+            {/* Aplicamos estilos condicionales según si el tipo es círculo o diamante */}
             <div 
               className={`icon-shape ${cat.type}`}
               style={{ 
@@ -109,8 +109,10 @@ export const LidlHeader: React.FC = () => {
         ))}
       </div>
 
-      {/* 5. Galería */}
-      <GalleryMock />
+      {/* Insertamos la galería de imágenes al final del header */}
+      <div className="gallery-section">
+          <Galeria />
+      </div>
       
     </div>
   );

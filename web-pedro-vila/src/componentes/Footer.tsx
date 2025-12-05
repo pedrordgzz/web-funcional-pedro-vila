@@ -5,12 +5,12 @@ import Col from 'react-bootstrap/Col';
 import IconBar from './iconbar';
 import './footer.css';
 
-// Iconos sociales
+// Importamos los iconos sociales de la librería react-icons
 import {
     FaFacebookF, FaTwitter, FaYoutube, FaInstagram, FaTiktok, FaWhatsapp, FaChevronUp
 } from "react-icons/fa";
 
-// Componente auxiliar
+// Definimos un componente auxiliar para renderizar las listas y limpiar el código principal
 const FooterList = ({ items }: { items: string[] }) => {
     return (
         <ul className="footer-list">
@@ -23,6 +23,7 @@ const FooterList = ({ items }: { items: string[] }) => {
 
 const Footer: React.FC = () => {
 
+    // Preparamos los arrays de datos para cada sección del footer
     const lidlLinks = [
         "Empresa", "Sostenibilidad", "Sala de prensa", "Empleo",
         "Inmuebles", "Newsletter", "Programa de afiliación",
@@ -42,14 +43,14 @@ const Footer: React.FC = () => {
     return (
         <footer className="lidl-footer-wrapper">
 
-            {/* 1. Barra de Iconos */}
+            {/* 1. Insertamos la barra de iconos superior */}
             <IconBar />
 
-            {/* 2. Contenido principal */}
+            {/* 2. Estructuramos el contenido principal usando el grid de Bootstrap */}
             <div className="footer-main-content pt-5 pb-4">
                 <Container>
                     <Row>
-                        {/* COLUMNA 1 */}
+                        {/* COLUMNA 1: Enlaces corporativos y Apps */}
                         <Col md={3} className="mb-4">
                             <h6 className="footer-heading">LIDL</h6>
                             <FooterList items={lidlLinks} />
@@ -61,7 +62,7 @@ const Footer: React.FC = () => {
                             <FooterList items={marcasLinks} />
                         </Col>
 
-                        {/* COLUMNA 2 */}
+                        {/* COLUMNA 2: Atención al cliente y logística */}
                         <Col md={3} className="mb-4">
                             <h6 className="footer-heading">ATENCIÓN AL CLIENTE</h6>
                             <FooterList items={atencionLinks} />
@@ -77,7 +78,7 @@ const Footer: React.FC = () => {
                             <FooterList items={productosLinks} />
                         </Col>
 
-                        {/* COLUMNA 3 */}
+                        {/* COLUMNA 3: Pagos y garantías */}
                         <Col md={3} className="mb-4">
                             <h6 className="footer-heading">MÉTODOS DE PAGO</h6>
                             <div className="logos-grid">
@@ -95,7 +96,7 @@ const Footer: React.FC = () => {
                             </div>
                         </Col>
 
-                        {/* COLUMNA 4 */}
+                        {/* COLUMNA 4: Premios */}
                         <Col md={3} className="mb-4">
                             <h6 className="footer-heading">PREMIOS</h6>
                             <div className="logos-grid">
@@ -107,12 +108,13 @@ const Footer: React.FC = () => {
                 </Container>
             </div>
 
-{/* 3. Legal + Redes sociales */}
+            {/* 3. Barra inferior con enlaces legales y redes sociales */}
             <div className="footer-bottom-bar py-3">
                 <Container>
                     <Row className="align-items-center">
                         <Col lg={8} md={12} className="mb-3 mb-lg-0">
                             <ul className="legal-links list-unstyled d-flex flex-wrap m-0">
+                                {/* Iteramos los links legales añadiendo separadores condicionales */}
                                 {legalLinks.map((link, idx) => (
                                     <li key={idx} className="me-3 position-relative">
                                         <a href="#">{link}</a>

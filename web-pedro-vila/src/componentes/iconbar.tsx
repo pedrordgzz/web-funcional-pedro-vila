@@ -11,8 +11,8 @@ interface BenefitItem {
   text: string;
 }
 
+// Definios el array que leerá la función map para pintar
 export default function IconBar() {
-    
     const benefits: BenefitItem[] = [
         { 
             id: 1, 

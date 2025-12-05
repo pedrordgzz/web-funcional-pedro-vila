@@ -6,7 +6,7 @@
   text-align: left;  /* Alinear texto a la izquierda por defecto (opcional) */
 }
 
-/* El resto de estilos (.logo, .card, etc.) los puedes dejar igual si quieres */
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -18,11 +18,6 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 @media (prefers-reduced-motion: no-preference) {

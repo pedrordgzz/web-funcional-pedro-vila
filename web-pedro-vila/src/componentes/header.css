@@ -1,10 +1,10 @@
-/* --- Reset básico --- */
+/* Definimos la fuente base y aseguramos que el layout ocupe el ancho completo */
 .lidl-layout {
   font-family: 'Segoe UI', sans-serif;
   width: 100%;
 }
 
-/* --- 1. Franja Amarilla --- */
+/* Estilizamos la barra superior con el color corporativo y centramos el contenido con flexbox */
 .top-yellow-bar {
   background-color: #FFF100;
   color: #111;
@@ -17,11 +17,12 @@
   gap: 10px;
 }
 
+/* Ajustamos el tamaño del icono del camión para que destaque ligeramente */
 .truck-icon {
   font-size: 1.3rem;
 }
 
-/* --- 2. Franja Negra --- */
+/* Creamos la barra de 'Black Week' con alto contraste para llamar la atención */
 .black-banner {
   background-color: #000;
   color: white;
@@ -32,7 +33,7 @@
   letter-spacing: 0.5px;
 }
 
-/* --- 3. Contenedor de Categorías --- */
+/* Usamos Flexbox con 'wrap' para que las categorías bajen de línea si no caben en pantalla */
 .categories-container {
   display: flex;
   justify-content: center;
@@ -42,6 +43,7 @@
   flex-wrap: wrap;
 }
 
+/* Alineamos verticalmente cada elemento de categoría (icono + texto) */
 .category-item {
   display: flex;
   flex-direction: column;
@@ -51,7 +53,7 @@
   cursor: pointer;
 }
 
-/* Estilos de las Formas */
+/* Definimos la base visual para los iconos con sombra y transición suave */
 .icon-shape {
   width: 90px;
   height: 90px;
@@ -64,15 +66,17 @@
   transition: transform 0.2s ease;
 }
 
+/* Añadimos un efecto de escala al pasar el ratón por encima */
 .icon-shape:hover {
   transform: scale(1.05);
 }
 
+/* Aplicamos el borde redondeado para las categorías tipo 'circle' */
 .icon-shape.circle {
   border-radius: 50%;
 }
 
-/* Rombo (Ofertas) */
+/* Rotamos el cuadrado 45 grados para crear la forma de diamante */
 .icon-shape.diamond {
   border-radius: 12px;
   transform: rotate(45deg);
@@ -80,23 +84,24 @@
   margin-top: 10px;
 }
 
+/* Mantenemos la rotación en el hover para que no se descuadre al escalar */
 .icon-shape.diamond:hover {
   transform: rotate(45deg) scale(1.05);
 }
 
-/* Contenido interno */
+/* Centramos el contenido dentro de la forma */
 .icon-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* Corrige rotación del rombo */
+/* IMPORTANTE: Contrarrestamos la rotación del rombo para que el texto 'Ofertas' se vea recto */
 .icon-shape.diamond .icon-content {
   transform: rotate(-45deg);
 }
 
-/* Texto "Ofertas" */
+/* Damos estilo al texto dentro del rombo rojo con un borde simulado */
 .offer-text {
   font-size: 1rem;
   font-weight: 900;
@@ -106,7 +111,7 @@
   -webkit-text-stroke: 0.5px #E2001A;
 }
 
-/* Etiquetas inferiores */
+/* Estilizamos el nombre de la categoría debajo del icono */
 .category-label {
   margin-top: 12px;
   font-size: 0.85rem;
@@ -114,37 +119,32 @@
   color: #333;
 }
 
+/* Subrayamos el texto cuando pasamos el ratón por encima de todo el item */
 .category-item:hover .category-label {
   text-decoration: underline;
 }
 
-/* --- RESPONSIVIDAD (Ajustes para móvil) --- */
+/* Reducimos tamaños y espaciados en pantallas menores de 991px */
 @media (max-width: 991px) {
   .categories-container {
     padding: 20px 10px;
   }
-
   .category-item {
     width: 90px;
   }
-
   .icon-shape {
     width: 70px;
     height: 70px;
     font-size: 2.2rem;
   }
-
   .category-label {
     font-size: 0.75rem;
   }
 }
 
-/* =======================================================
-   🔥 OCULTAR GALERÍA EN MÓVIL Y TABLET
-   (AÑADIDO POR PETICIÓN DEL USUARIO)
-======================================================= */
+/* Ocultamos la sección de la galería en dispositivos pequeños para mejorar la carga visual */
 @media (max-width: 768px) {
-  .gallery {
+  .gallery-section {
     display: none !important;
   }
 }

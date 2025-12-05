@@ -13,7 +13,7 @@ const PaginaSimple = ({ texto }: { texto: string }) => (
 export default function App() {
   return (
     <>
-      {/* Header siempre visible */}
+{/* Header siempre visible */}
       <LidlHeader />
 
       {/* Contenido según la ruta */}
@@ -27,8 +27,7 @@ export default function App() {
         <Route path="/inspirate" element={<PaginaSimple texto="Página: Inspírate" />} />
         <Route path="/*" element={<PaginaSimple texto="ERROR 404: DIRECCIÓN INCORRECTA" />} />
       </Routes>
-
-      {/* Footer siempre visible */}
+{/* Footer siempre visible */}
       <Footer />
     </>
   );

@@ -1,10 +1,10 @@
-/* Wrapper principal */
+/* Contenedor del footer */
 .lidl-footer-wrapper {
     width: 100%;
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* --- ZONA PRINCIPAL (Gris oscuro) --- */
+/* Zona principal donde estaran todos los demás componentes */
 .footer-main-content {
     background-color: #565e64;
     color: white;
@@ -33,25 +33,22 @@
 .footer-list li {
     margin-bottom: 6px;
 }
-
 .footer-list a {
     color: #e0e0e0;
     text-decoration: none;
     transition: color 0.2s;
 }
-
 .footer-list a:hover {
     color: white;
     text-decoration: underline;
 }
 
-/* --- LOGOS (Cajas blancas) --- */
+/* Zona de los logos, imagenes... */
 .logos-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
 }
-
 .logo-box {
     background-color: white;
     color: #333;
@@ -65,65 +62,55 @@
     min-width: 45px;
     height: 30px;
     overflow: hidden;
-    /* evita deformaciones */
 }
-
 .logo-box.round {
     border-radius: 50%;
     width: 45px;
     height: 45px;
 }
-
 .logo-box.rect {
     width: auto;
     padding: 5px 10px;
 }
-
 .logo-box img {
     max-height: 100%;
-    /* para que encaje en la altura definida */
     width: auto;
     object-fit: contain;
-    /* mantiene proporción */
     display: block;
 }
 
-/* --- BARRA INFERIOR --- */
+/* Barra inferior donde aparecen los links legales... */
 .footer-bottom-bar {
     background-color: #565e64;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     color: #ccc;
     font-size: 0.75rem;
 }
-
 .legal-links a {
     color: #ccc;
     text-decoration: none;
 }
-
 .legal-links a:hover {
     text-decoration: underline;
     color: white;
 }
-
 .separator {
     color: #888;
 }
 
-/* Redes Sociales */
+/* Zona redes sociales */
 .social-icon {
     font-size: 1.2rem;
     cursor: pointer;
     color: white;
     transition: transform 0.2s;
 }
-
 .social-icon:hover {
     transform: scale(1.2);
     color: #fff100;
 }
 
-/* Botón subir */
+/* Botón cuadrado para subir */
 .scroll-btn {
     background-color: white;
     color: #565e64;
