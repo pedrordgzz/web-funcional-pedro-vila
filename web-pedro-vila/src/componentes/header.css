@@ -38,7 +38,7 @@
   justify-content: center;
   gap: 25px;
   padding: 30px 20px;
-  background-color: #F8F8F8; /* Gris muy clarito de fondo */
+  background-color: #F8F8F8;
   flex-wrap: wrap;
 }
 
@@ -51,7 +51,7 @@
   cursor: pointer;
 }
 
-/* Estilos de las Formas (Círculos y Rombo) */
+/* Estilos de las Formas */
 .icon-shape {
   width: 90px;
   height: 90px;
@@ -59,7 +59,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 2.8rem; /* Tamaño de los iconos dentro */
+  font-size: 2.8rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s ease;
 }
@@ -68,7 +68,6 @@
   transform: scale(1.05);
 }
 
-/* Círculo estándar */
 .icon-shape.circle {
   border-radius: 50%;
 }
@@ -76,8 +75,8 @@
 /* Rombo (Ofertas) */
 .icon-shape.diamond {
   border-radius: 12px;
-  transform: rotate(45deg); /* Giramos el cuadrado */
-  margin-bottom: 12px; /* Espacio extra abajo por la rotación */
+  transform: rotate(45deg);
+  margin-bottom: 12px;
   margin-top: 10px;
 }
 
@@ -85,29 +84,29 @@
   transform: rotate(45deg) scale(1.05);
 }
 
-/* Contenido dentro del icono */
+/* Contenido interno */
 .icon-content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* IMPORTANTE: Contrarrestar la rotación solo para el contenido del rombo */
+/* Corrige rotación del rombo */
 .icon-shape.diamond .icon-content {
   transform: rotate(-45deg);
 }
 
-/* Texto específico de "OFERTAS" */
+/* Texto "Ofertas" */
 .offer-text {
   font-size: 1rem;
   font-weight: 900;
-  color: #FFF100; /* Texto amarillo */
+  color: #FFF100;
   text-transform: uppercase;
   font-family: 'Arial Black', sans-serif;
-  -webkit-text-stroke: 0.5px #E2001A; /* Borde sutil para legibilidad (opcional) */
+  -webkit-text-stroke: 0.5px #E2001A;
 }
 
-/* Etiquetas de texto debajo */
+/* Etiquetas inferiores */
 .category-label {
   margin-top: 12px;
   font-size: 0.85rem;
@@ -119,3 +118,33 @@
   text-decoration: underline;
 }
 
+/* --- RESPONSIVIDAD (Ajustes para móvil) --- */
+@media (max-width: 991px) {
+  .categories-container {
+    padding: 20px 10px;
+  }
+
+  .category-item {
+    width: 90px;
+  }
+
+  .icon-shape {
+    width: 70px;
+    height: 70px;
+    font-size: 2.2rem;
+  }
+
+  .category-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* =======================================================
+   🔥 OCULTAR GALERÍA EN MÓVIL Y TABLET
+   (AÑADIDO POR PETICIÓN DEL USUARIO)
+======================================================= */
+@media (max-width: 768px) {
+  .gallery {
+    display: none !important;
+  }
+}

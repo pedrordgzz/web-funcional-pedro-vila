@@ -3,12 +3,23 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
-import './navbar.css'; 
+import './navbar.css';
 
-// Iconos importados de react-icons
-import { IoMenu, IoNewspaperOutline, IoStorefrontOutline, IoPersonOutline, IoHeartOutline, IoCartOutline } from "react-icons/io5";
+import { NavLink } from "react-router-dom";
+
+// ICONOS (react-icons)
+import { 
+  IoMenu, 
+  IoNewspaperOutline, 
+  IoStorefrontOutline, 
+  IoPersonOutline, 
+  IoHeartOutline, 
+  IoCartOutline 
+} from "react-icons/io5";
+
 import type { IconType } from 'react-icons';
-// Interfaces definidas para los tipos de los props
+
+// Props
 interface BotonIconoProps {
   texto: string;
   Icono: IconType;
@@ -16,14 +27,18 @@ interface BotonIconoProps {
 
 interface LinkInferiorProps {
   texto: string;
-  activo?: boolean;
+  to: string;
 }
+
+/* =====================================================
+   COMPONENTE PRINCIPAL NAVBAR
+===================================================== */
 
 const Navbar: React.FC = () => {
   return (
     <div className="lidl-header-wrapper">
 
-{/* Función para mostrar los elementos de arriba de la página, funcion map que va recorriendo los valores indicados y los muestra */}
+      {/* ─── UTILITIES BAR (Superior) ─────────────────────── */}
       <div className="lidl-utility-bar">
         <Container className="lidl-utility-container">
           <span className="lidl-slogan">Vale la pena.</span>
@@ -34,67 +49,82 @@ const Navbar: React.FC = () => {
           </div>
         </Container>
       </div>
-{/* Logo de Lidl */}
+
+      {/* ─── ZONA PRINCIPAL (Logo, Menu, Buscador, Iconos) ─── */}
       <Container className="lidl-main-container">
-        <div className="lidl-main-row">          
+        <div className="lidl-main-row">
+
+          {/* LOGO */}
           <div className="lidl-logo">
-            <img src="/logo.svg" width="60" height="60" className="d-inline-block align-top" alt="Logo Lidl"/>
+            <img 
+              src="/logo.svg" 
+              width="60" 
+              height="60" 
+              className="d-inline-block align-top" 
+              alt="Logo Lidl"
+            />
           </div>
-{/* Botón del menú */}
+
+          {/* BOTÓN MENÚ */}
           <div className="lidl-menu-btn">
             <IoMenu size={30} /> 
             <span>Menú</span>
           </div>
-{/* Barra de búsqueda */}
+
+          {/* BUSCADOR */}
           <Form className="lidl-search-form">
-          {/* Rectángulo donde se escribe en la barra de búsqueda */}
             <Form.Control
               type="search"
               placeholder="Buscar"
               className="lidl-search-input"
             />
-          {/* Botón de buscar */}
             <Button className="lidl-search-button">
               BUSCAR
             </Button>
           </Form>
 
-{/* Menú de la derecha */}
+          {/* ICONOS DERECHA */}
           <div className="lidl-icons-container">
-            {/* Usando props, indicamos el texto que aparecerá y el icono importado de react-icons */}
-             <BotonIcono texto="Folleto" Icono={IoNewspaperOutline} />
-  
-             <div className="lidl-icon-wrapper">
-                <BotonIcono texto="Mi tienda" Icono={IoStorefrontOutline} />
-             </div>
+            <BotonIcono texto="Folleto" Icono={IoNewspaperOutline} />
 
-             <BotonIcono texto="Identifícate" Icono={IoPersonOutline} />
-             <BotonIcono texto="Lista de deseos" Icono={IoHeartOutline} />
-             <BotonIcono texto="Cesta" Icono={IoCartOutline} />
+            <div className="lidl-icon-wrapper">
+              <BotonIcono texto="Mi tienda" Icono={IoStorefrontOutline} />
+            </div>
+
+            <BotonIcono texto="Identifícate" Icono={IoPersonOutline} />
+            <BotonIcono texto="Lista de deseos" Icono={IoHeartOutline} />
+            <BotonIcono texto="Cesta" Icono={IoCartOutline} />
           </div>
+
         </div>
       </Container>
 
-{/* Menú que aparece debajo de la barra de búsqueda */}
+      {/* ─── NAVBAR INFERIOR (CON RUTAS REALES) ───────────── */}
       <div className="lidl-bottom-nav">
         <Container>
           <Nav className="lidl-nav-scroll">
-            <LinkInferior texto="Compra Online" activo={true} />
-            <LinkInferior texto="En tu tienda" />
-            <LinkInferior texto="Lidl Plus" />
-            <LinkInferior texto="Recetas" />
-            <LinkInferior texto="Mundos para ti" />
-            <LinkInferior texto="Inspírate" />
+
+            <LinkInferior texto="Compra Online"  to="/compra-online" />
+            <LinkInferior texto="En tu tienda"   to="/en-tu-tienda" />
+            <LinkInferior texto="Lidl Plus"      to="/lidl-plus" />
+            <LinkInferior texto="Recetas"        to="/recetas" />
+            <LinkInferior texto="Mundos para ti" to="/mundos" />
+            <LinkInferior texto="Inspírate"      to="/inspirate" />
+
           </Nav>
         </Container>
       </div>
 
     </div>
   );
-}
+};
 
 
-// Renderizo icono como un icono, para así poder darle props, como por ejemplo, el tamaño
+/* =====================================================
+   COMPONENTES AUXILIARES
+===================================================== */
+
+// Ícono superior
 const BotonIcono: React.FC<BotonIconoProps> = ({ texto, Icono }) => {
   return (
     <div className="lidl-icon-btn">
@@ -104,14 +134,20 @@ const BotonIcono: React.FC<BotonIconoProps> = ({ texto, Icono }) => {
       <span className="lidl-icon-text">{texto}</span>
     </div>
   );
-}
+};
 
-const LinkInferior: React.FC<LinkInferiorProps> = ({ texto, activo }) => {
+// ENLACES INFERIORES CON NavLink
+const LinkInferior: React.FC<LinkInferiorProps> = ({ texto, to }) => {
   return (
-    <Nav.Link href="#" className={`lidl-nav-link ${activo ? 'active' : ''}`}>
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `lidl-nav-link ${isActive ? "active" : ""}`
+      }
+    >
       {texto}
-    </Nav.Link>
+    </NavLink>
   );
-}
+};
 
 export default Navbar;
